@@ -1,15 +1,14 @@
+
 type Movie {
     id: Int
     title : String!
     poster_path : String!
 }
-
 input MovieInput {
     id: Int
     title : String!
     poster_path : String!
 }
-
 type MovieBooking {
     id: ID
     first_name : String
@@ -20,7 +19,6 @@ type MovieBooking {
     movie : Movie
     status : String
 }
-
 input MovieBookingInput {
     first_name : String!
     last_name : String!
@@ -28,5 +26,4 @@ input MovieBookingInput {
     number_of_seats : Int!
     date : String!
     movie : MovieInput
-
 }

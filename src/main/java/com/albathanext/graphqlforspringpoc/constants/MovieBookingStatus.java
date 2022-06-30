@@ -1,7 +1,6 @@
 package com.albathanext.graphqlforspringpoc.constants;
 
 
-import com.albathanext.graphqlforspringpoc.model.MovieBooking;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

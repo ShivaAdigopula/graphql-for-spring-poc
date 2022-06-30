@@ -2,10 +2,6 @@ package com.albathanext.graphqlforspringpoc.repository;
 
 import com.albathanext.graphqlforspringpoc.exception.DataNotFoundException;
 import com.albathanext.graphqlforspringpoc.model.Movie;
-import graphql.GraphQLError;
-import graphql.GraphQLException;
-import graphql.GraphqlErrorException;
-import graphql.GraphqlErrorHelper;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;

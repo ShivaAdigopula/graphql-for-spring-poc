@@ -1,6 +1,5 @@
 package com.albathanext.graphqlforspringpoc.repository;
 
-import com.albathanext.graphqlforspringpoc.model.Movie;
 import com.albathanext.graphqlforspringpoc.model.MovieBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
