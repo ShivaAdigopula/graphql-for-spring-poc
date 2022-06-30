@@ -1,0 +1,4 @@
+type Query {
+    movieBookings(email : String) : [MovieBooking]
+    movies(title : String ) : [Movie]
+}

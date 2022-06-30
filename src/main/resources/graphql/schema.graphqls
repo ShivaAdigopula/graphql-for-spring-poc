@@ -1,0 +1,32 @@
+type Movie {
+    id: Int
+    title : String!
+    poster_path : String!
+}
+
+input MovieInput {
+    id: Int
+    title : String!
+    poster_path : String!
+}
+
+type MovieBooking {
+    id: ID
+    first_name : String
+    last_name : String
+    email: String
+    number_of_seats : Int
+    date : String
+    movie : Movie
+    status : String
+}
+
+input MovieBookingInput {
+    first_name : String!
+    last_name : String!
+    email: String!
+    number_of_seats : Int!
+    date : String!
+    movie : MovieInput
+
+}
