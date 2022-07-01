@@ -1,0 +1,16 @@
+query movieBookings($email : String){
+    movieBookings (email : $email) {
+        id
+        first_name
+        last_name
+        email
+        number_of_seats
+        date
+        movie {
+            id
+            title
+            poster_path
+        }
+        status
+    }
+}

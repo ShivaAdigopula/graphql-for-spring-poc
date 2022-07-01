@@ -1,0 +1,7 @@
+query movies($title : String){
+    movies(title: $title) {
+        id
+        title
+        poster_path
+    }
+}

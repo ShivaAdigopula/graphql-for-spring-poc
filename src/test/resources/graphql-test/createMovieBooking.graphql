@@ -1,0 +1,27 @@
+mutation {
+    createMovieBooking(movieBooking: {
+        first_name: "first_name",
+        last_name: "last_name",
+        email: "email@albathanext.com",
+        number_of_seats: 2,
+        date: "21/07/2022",
+        movie:  {
+            id: 2,
+            title: "def",
+            poster_path: "def.jpg"
+        }
+    }) {
+        id
+        first_name
+        last_name
+        email
+        number_of_seats
+        date
+        movie {
+            id
+            title
+            poster_path
+        }
+        status
+    }
+}

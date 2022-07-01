@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.albathanext</groupId>
     <artifactId>graphql-for-spring-poc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>graphql-for-spring-poc</name>
     <description>graphql-for-spring-poc</description>
     <properties>
@@ -75,6 +75,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>graphql-for-spring-poc</finalName>
     </build>
 
 </project>

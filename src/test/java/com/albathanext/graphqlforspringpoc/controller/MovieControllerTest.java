@@ -12,13 +12,14 @@ import org.springframework.graphql.test.tester.GraphQlTester;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @Slf4j
 @GraphQlTest(MovieController.class)
-class MovieControllerTest {
+ class MovieControllerTest {
     @Autowired
     private GraphQlTester graphQlTester;
 
@@ -42,23 +43,30 @@ class MovieControllerTest {
     }
 
     @Test
-    void testFindAllMoviesQueryReturnsAllMovies() {
-        String document = """
-            query {
-                movies {
-                    id
-                    title
-                    poster_path
-                }
-            }        
-        """;
+    void testMoviesQueryWithNoFilterReturnsAllMovies() {
+
 
         when(movieService.findMovies(null)).thenReturn(movies);
 
-        graphQlTester.document(document)
+        graphQlTester.documentName("movies")
+                .variable("title", null)
                 .execute()
                 .path("movies")
                 .entityList(Movie.class)
                 .hasSize(4);
+    }
+
+    @Test
+    void testMoviesQueryWithFilterReturnsAllMovies() {
+        final String title = "abc";
+
+        when(movieService.findMovies(title)).thenReturn(movies.stream().filter(movie -> movie.getTitle().equals(title)).collect(Collectors.toList()));
+
+        graphQlTester.documentName("movies")
+                .variable("title", title)
+                .execute()
+                .path("movies")
+                .entityList(Movie.class)
+                .hasSize(1);
     }
 }
